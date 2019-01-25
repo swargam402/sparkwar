@@ -40,8 +40,8 @@ node {
 //  remote.user = 'root'
 //  remote.password = 'root'
 //  remote.allowAnyHosts = true
-  stage('Remote SSH') {
-    sshCommand remote: remote, command: "ls -lrt"
-    sshCommand remote: remote, command: "docker ps"
-  }
-}
+//  stage('Remote SSH') {
+//   sshCommand remote: remote, command: "ls -lrt"
+ //   sshCommand remote: remote, command: "docker ps"
+ // }
+//}
