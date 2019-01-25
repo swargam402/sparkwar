@@ -17,6 +17,11 @@ node {
    stage('Build Docker Image') {
         sh "docker build . -t swargam402/sparkwar:$BUILD_NUMBER"
    }
+
+   stage('remove before latest image') {
+	sh "docker rmi swargam402/sparkwar:latest"
+   }
+
    stage('Create latest Tag') {
         sh "docker tag swargam402/sparkwar:$BUILD_NUMBER swargam402/sparkwar:latest"
    }
