@@ -33,13 +33,13 @@ node {
         sh "docker rmi swargam402/sparkwar:$BUILD_NUMBER"
    }
 }
-node {
-  def remote = [:]
-  remote.name = '192.168.253.138'
-  remote.host = '192.168.253.138'
-  remote.user = 'root'
-  remote.password = 'root'
-  remote.allowAnyHosts = true
+//node {
+//  def remote = [:]
+//  remote.name = '192.168.253.138'
+//  remote.host = '192.168.253.138'
+//  remote.user = 'root'
+//  remote.password = 'root'
+//  remote.allowAnyHosts = true
   stage('Remote SSH') {
     sshCommand remote: remote, command: "ls -lrt"
     sshCommand remote: remote, command: "docker ps"
